@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox UI Concept</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-cubes"></i> </div>
+            <nav class="main-nav">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#games" class="nav-item">Games</a>
+                <a href="#avatar-shop" class="nav-item">Avatar Shop</a>
+                <a href="#create" class="nav-item">Create</a>
+            </nav>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="user-actions">
+                <button class="icon-button"><i class="fas fa-cog"></i></button> <button class="icon-button"><i class="fas fa-envelope"></i></button> <button class="icon-button"><i class="fas fa-bell"></i></button> <div class="robux-display">
+                    <i class="fa-solid fa-circle-dollar-to-slot"></i> <span>1337</span>
+                </div>
+                <div class="user-profile-icon">
+                    <img src="placeholder-avatar.png" alt="User"> </div>
+            </div>
+        </header>
+
+        <div class="main-content-area">
+            <aside class="sidebar-nav">
+                <ul>
+                    <li><a href="#profile" data-section="profile"><i class="fas fa-user"></i><span>Profile</span></a></li>
+                    <li><a href="#messages" data-section="messages"><i class="fas fa-comment-dots"></i><span>Messages</span></a></li>
+                    <li><a href="#friends" data-section="friends"><i class="fas fa-user-friends"></i><span>Friends</span></a></li>
+                    <li><a href="#avatar" data-section="avatar"><i class="fas fa-shirt"></i><span>Avatar</span></a></li>
+                    <li><a href="#inventory" data-section="inventory"><i class="fas fa-box"></i><span>Inventory</span></a></li>
+                    <li><a href="#trading" data-section="trading"><i class="fas fa-exchange-alt"></i><span>Trading</span></a></li>
+                    <li><a href="#groups" data-section="groups"><i class="fas fa-users"></i><span>Groups</span></a></li>
+                    <li><a href="#my-feed" data-section="my-feed"><i class="fas fa-stream"></i><span>My Feed</span></a></li>
+                    <li><a href="#blog" data-section="blog"><i class="fas fa-blog"></i><span>Blog</span></a></li>
+                    <li><a href="#shop" data-section="shop"><i class="fas fa-store"></i><span>Shop</span></a></li>
+                    <li><a href="#giftcards" data-section="giftcards"><i class="fas fa-gift"></i><span>Giftcards</span></a></li>
+                     <li><a href="#settings" data-section="settings"><i class="fas fa-cog"></i><span>Settings</span></a></li>
+                </ul>
+            </aside>
+
+            <main class="content-display">
+
+                <section id="home-content" class="content-section active-section">
+                    <div class="greeting">
+                        <h2>Good afternoon, @Username</h2>
+                    </div>
+
+                    <div class="friends-preview section">
+                        <div class="section-header">
+                            <h3>Friends (120)</h3>
+                            <a href="#friends" class="view-all">View All ></a>
+                        </div>
+                        <div class="horizontal-scroll-container">
+                            <div class="friend-item">
+                                <div class="status-indicator online"></div>
+                                <img src="placeholder-avatar.png" alt="Friend">
+                                <span>OnlyTwentyCharacters</span>
+                                <small>THE BEST GAME</small>
+                            </div>
+                             <div class="friend-item">
+                                <div class="status-indicator online"></div>
+                                <img src="placeholder-avatar.png" alt="Friend">
+                                <span>OnlyTwentyCharacters</span>
+                                <small>Idle on game</small>
+                            </div>
+                             <div class="friend-item">
+                                <div class="status-indicator playing"></div>
+                                <img src="placeholder-avatar.png" alt="Friend">
+                                <span>OnlyTwentyCharacters</span>
+                                <small>Best place 1</small>
+                            </div>
+                            <div class="friend-item">
+                                <div class="status-indicator playing"></div>
+                                <img src="placeholder-avatar.png" alt="Friend">
+                                <span>OnlyTwentyCharacters</span>
+                                <small>ASSET PLACE</small>
+                            </div>
+                             <div class="friend-item">
+                                <div class="status-indicator website"></div>
+                                <img src="placeholder-avatar.png" alt="Friend">
+                                <span>OnlyTwentyCharacters</span>
+                                <small>Website</small>
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="spotlight section">
+                        <div class="section-header">
+                            <h3>Spotlight</h3>
+                            <div class="scroll-arrows">
+                                <button>&lt;</button>
+                                <button>&gt;</button>
+                            </div>
+                        </div>
+                        <div class="game-grid spotlight-grid">
+                            <div class="game-card large">
+                                <div class="game-thumb placeholder-bg">?</div>
+                                <div class="game-info">
+                                    <h4>Game Title</h4>
+                                    <small>By @Creator</small>
+                                    <div class="game-stats">
+                                        <span><i class="fas fa-thumbs-up"></i> 92%</span>
+                                        <span><i class="fas fa-users"></i> 1.5k</span>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="game-card large">
+                                <div class="game-thumb placeholder-bg">?</div>
+                                <div class="game-info">
+                                    <h4>Game Title</h4>
+                                    <small>By @Creator</small>
+                                    <div class="game-stats">
+                                        <span><i class="fas fa-thumbs-up"></i> 92%</span>
+                                        <span><i class="fas fa-users"></i> 1.5k</span>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="game-card large">
+                                <div class="game-thumb placeholder-bg">?</div>
+                                <div class="game-info">
+                                    <h4>Game Title</h4>
+                                    <small>By @Creator</small>
+                                    <div class="game-stats">
+                                        <span><i class="fas fa-thumbs-up"></i> 92%</span>
+                                        <span><i class="fas fa-users"></i> 1.5k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card large">
+                                <div class="game-thumb placeholder-bg">?</div>
+                                <div class="game-info">
+                                    <h4>Game Title</h4>
+                                    <small>By @Creator</small>
+                                    <div class="game-stats">
+                                        <span><i class="fas fa-thumbs-up"></i> 74%</span>
+                                        <span><i class="fas fa-users"></i> 1.2k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="recently-played section">
+                        <div class="section-header">
+                            <h3>Recently Played</h3>
+                            <a href="#" class="view-all">View All ></a>
+                        </div>
+                        <div class="game-grid small-grid">
+                           <div class="game-card small">
+                                <div class="game-thumb placeholder-bg">?</div>
+                                <div class="game-info">
+                                    <h5>Game Title</h5>
+                                    <div class="game-stats small-stats">
+                                         <span><i class="fas fa-thumbs-up"></i> 77%</span>
+                                         <span><i class="fas fa-users"></i> 1.1k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                             <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                              <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+
+                        </div>
+                    </div>
+
+                     <div class="recommended section">
+                        <div class="section-header">
+                            <h3>Recommended</h3>
+                            <a href="#" class="view-all">View All ></a>
+                        </div>
+                        <div class="game-grid small-grid">
+                             <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                            <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                             <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                              <div class="game-card small"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h5>Game Title</h5><div class="game-stats small-stats"><span><i class="fas fa-thumbs-up"></i> 80%</span> <span><i class="fas fa-users"></i> 900</span></div></div></div>
+                        </div>
+                    </div>
+
+                    <div class="ad-placeholder bottom-left">ADS</div>
+                    <div class="ad-placeholder bottom-right">ADS</div>
+
+                </section>
+
+                <section id="games-content" class="content-section hidden">
+                    <h2>Games Section</h2>
+                    <p>This is where the full games list, filters, sorting, etc., would appear.</p>
+                    <div class="game-grid full-page-grid">
+                        <div class="game-card medium"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h4>Game Title</h4><small>By @Creator</small><div class="game-stats"><span><i class="fas fa-thumbs-up"></i> 90%</span> <span><i class="fas fa-users"></i> 2.1k</span></div></div></div>
+                         <div class="game-card medium"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h4>Game Title</h4><small>By @Creator</small><div class="game-stats"><span><i class="fas fa-thumbs-up"></i> 90%</span> <span><i class="fas fa-users"></i> 2.1k</span></div></div></div>
+                         <div class="game-card medium"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h4>Game Title</h4><small>By @Creator</small><div class="game-stats"><span><i class="fas fa-thumbs-up"></i> 90%</span> <span><i class="fas fa-users"></i> 2.1k</span></div></div></div>
+                         <div class="game-card medium"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h4>Game Title</h4><small>By @Creator</small><div class="game-stats"><span><i class="fas fa-thumbs-up"></i> 90%</span> <span><i class="fas fa-users"></i> 2.1k</span></div></div></div>
+                         <div class="game-card medium"><div class="game-thumb placeholder-bg">?</div><div class="game-info"><h4>Game Title</h4><small>By @Creator</small><div class="game-stats"><span><i class="fas fa-thumbs-up"></i> 90%</span> <span><i class="fas fa-users"></i> 2.1k</span></div></div></div>
+                         </div>
+                </section>
+
+                <section id="avatar-shop-content" class="content-section hidden">
+                    <h2>Avatar Shop</h2>
+                    <p>Browse and purchase avatar items here. Filters for categories, creators, etc.</p>
+                    <div class="item-grid">
+                         <div class="item-card"><div class="item-thumb placeholder-bg">?</div><div class="item-info"><h5>Item Name</h5><small>By @Creator</small><span><i class="fa-solid fa-circle-dollar-to-slot"></i> 100</span></div></div>
+                         <div class="item-card"><div class="item-thumb placeholder-bg">?</div><div class="item-info"><h5>Item Name</h5><small>By @Creator</small><span><i class="fa-solid fa-circle-dollar-to-slot"></i> 100</span></div></div>
+                         <div class="item-card"><div class="item-thumb placeholder-bg">?</div><div class="item-info"><h5>Item Name</h5><small>By @Creator</small><span><i class="fa-solid fa-circle-dollar-to-slot"></i> 100</span></div></div>
+                         <div class="item-card"><div class="item-thumb placeholder-bg">?</div><div class="item-info"><h5>Item Name</h5><small>By @Creator</small><span><i class="fa-solid fa-circle-dollar-to-slot"></i> 100</span></div></div>
+                         </div>
+                </section>
+
+                <section id="profile-content" class="content-section hidden">
+                    <h2>Profile (@Username)</h2>
+                    <p>User details, stats, creations, groups, friends, etc.</p>
+                    <div class="profile-header">
+                        <img src="placeholder-avatar.png" alt="User Large" class="profile-avatar-large">
+                        <div>
+                            <h3>@Username</h3>
+                            <p>User description goes here...</p>
+                            <div class="profile-stats">
+                                <span>Friends: 120</span> | <span>Followers: 500</span> | <span>Following: 50</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="profile-tabs">
+                        <button>About</button>
+                        <button>Creations</button>
+                        <button>Collections</button>
+                    </div>
+                </section>
+
+                <section id="messages-content" class="content-section hidden">
+                    <h2>Messages</h2>
+                    <p>Your conversations would appear here.</p>
+                    <div class="message-list">
+                        <div class="message-item unread">
+                            <img src="placeholder-avatar.png" alt="Sender">
+                            <div>
+                                <h5>FriendUsername</h5>
+                                <p>Hey, what's up? Let's play later...</p>
+                            </div>
+                            <span class="message-time">5 min ago</span>
+                        </div>
+                         <div class="message-item">
+                            <img src="placeholder-avatar.png" alt="Sender">
+                            <div>
+                                <h5>AnotherFriend</h5>
+                                <p>Check out this cool game I found!</p>
+                            </div>
+                             <span class="message-time">1 hr ago</span>
+                        </div>
+                    </div>
+                </section>
+
+                 <section id="friends-content" class="content-section hidden">
+                    <h2>Friends</h2>
+                    <p>Full friends list, requests, followers, following.</p>
+                    <div class="friend-tabs">
+                        <button>Friends (120)</button>
+                        <button>Requests (3)</button>
+                         <button>Followers (500)</button>
+                        <button>Following (50)</button>
+                    </div>
+                     <div class="friend-grid">
+                        <div class="friend-detail-item">
+                             <img src="placeholder-avatar.png" alt="Friend">
+                             <div>
+                                 <h5>OnlyTwentyCharacters</h5>
+                                 <small>Online - Playing THE BEST GAME</small>
+                             </div>
+                            <button>Unfriend</button>
+                         </div>
+                         <div class="friend-detail-item">
+                             <img src="placeholder-avatar.png" alt="Friend">
+                             <div>
+                                 <h5>AnotherFriend</h5>
+                                 <small>Offline</small>
+                             </div>
+                            <button>Unfriend</button>
+                         </div>
+                         </div>
+                </section>
+
+                 <section id="settings-content" class="content-section hidden">
+                    <h2>Settings</h2>
+                    <p>Account info, security, privacy, billing, notifications.</p>
+                     <div class="settings-category">
+                         <h4>Account Info</h4>
+                         <label>Username:</label> <span>@Username</span> <button>Change</button><br>
+                         <label>Password:</label> <span>********</span> <button>Change</button><br>
+                         <label>Email:</label> <span>user@example.com</span> <button>Verify</button>
+                     </div>
+                      <div class="settings-category">
+                         <h4>Privacy</h4>
+                         <label>Who can message me?</label> <select><option>Friends</option><option>Everyone</option></select><br>
+                         <label>Who can see my inventory?</label> <select><option>Everyone</option><option>Friends</option></select>
+                     </div>
+                 </section>
+
+                 <section id="avatar-content" class="content-section hidden"><h2>Avatar Editor</h2><p>Content for Avatar Editor...</p></section>
+                 <section id="inventory-content" class="content-section hidden"><h2>Inventory</h2><p>Content for Inventory...</p></section>
+                 <section id="trading-content" class="content-section hidden"><h2>Trading</h2><p>Content for Trading...</p></section>
+                 <section id="groups-content" class="content-section hidden"><h2>Groups</h2><p>Content for Groups...</p></section>
+                 <section id="my-feed-content" class="content-section hidden"><h2>My Feed</h2><p>Content for My Feed...</p></section>
+                 <section id="blog-content" class="content-section hidden"><h2>Blog</h2><p>Content for Blog...</p></section>
+                 <section id="shop-content" class="content-section hidden"><h2>Shop</h2><p>Content for Shop...</p></section>
+                 <section id="giftcards-content" class="content-section hidden"><h2>Giftcards</h2><p>Content for Giftcards...</p></section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
