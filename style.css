@@ -1,0 +1,501 @@
+/* --- Basic Reset & Variables --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #121212;        /* Overall background */
+    --bg-secondary: #1e1e1e;      /* Header, cards */
+    --bg-tertiary: #2a2a2a;       /* Sidebar, slightly lighter elements */
+    --border-color: #3a3a3a;      /* Borders */
+    --text-primary: #e0e0e0;      /* Main text */
+    --text-secondary: #a0a0a0;    /* Subdued text (creator names, stats) */
+    --text-tertiary: #707070;     /* Very subdued text */
+    --accent-primary: #4a90e2;     /* Accent color for highlights (e.g., active link) */
+    --accent-online: #2ecc71;      /* Green for online status */
+    --accent-playing: #f39c12;     /* Orange for playing status */
+    --accent-website: #9b59b6;    /* Purple for website status (example) */
+    --placeholder-bg: #404040;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+input[type="text"] {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+/* --- Layout --- */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.main-content-area {
+    display: flex;
+    flex-grow: 1; /* Take remaining vertical space */
+    overflow: hidden; /* Prevent scrollbars here, allow scrolling within sections */
+}
+
+.sidebar-nav {
+    width: 240px;
+    background-color: var(--bg-tertiary);
+    padding: 20px 0;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto; /* Allow sidebar scrolling if needed */
+    flex-shrink: 0; /* Prevent sidebar from shrinking */
+}
+
+.content-display {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto; /* Allow main content scrolling */
+}
+
+/* --- Header Styling --- */
+.logo {
+    font-size: 24px;
+    margin-right: 30px;
+    color: var(--accent-primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav .nav-item {
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.main-nav .nav-item:hover {
+    color: var(--text-primary);
+}
+
+.main-nav .nav-item.active {
+    color: var(--text-primary);
+    border-bottom-color: var(--accent-primary);
+}
+
+.search-bar {
+    margin-left: auto; /* Pushes search and actions to the right */
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.search-bar i {
+    color: var(--text-secondary);
+    margin-right: 8px;
+}
+
+.search-bar input {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    width: 200px; /* Adjust as needed */
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-actions .icon-button {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+.user-actions .icon-button:hover {
+    color: var(--text-primary);
+}
+
+.robux-display {
+    display: flex;
+    align-items: center;
+    color: #00a2ff; /* Robux color */
+    font-weight: bold;
+}
+
+.robux-display i {
+    margin-right: 5px;
+    font-size: 18px; /* Adjust icon size if needed */
+    color: #00a2ff; /* Robux color */
+}
+
+.user-profile-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: var(--placeholder-bg); /* Placeholder */
+}
+
+/* --- Sidebar Styling --- */
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-secondary);
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.sidebar-nav li a.active-link {
+    background-color: rgba(74, 144, 226, 0.1); /* Faint accent color bg */
+    color: var(--text-primary);
+    border-left-color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.sidebar-nav li a i {
+    width: 25px; /* Fixed width for icons */
+    margin-right: 15px;
+    text-align: center;
+}
+
+/* --- Main Content Styling --- */
+.content-section {
+    margin-bottom: 40px; /* Spacing between sections */
+}
+
+.content-section.hidden {
+    display: none;
+}
+
+.content-section.active-section {
+    display: block;
+}
+
+.greeting h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.view-all {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+.view-all:hover {
+    color: var(--accent-primary);
+}
+
+.scroll-arrows button {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+.scroll-arrows button:hover {
+    background-color: var(--border-color);
+}
+
+/* --- Friends Preview --- */
+.horizontal-scroll-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scroll */
+    padding-bottom: 15px; /* Space for scrollbar */
+}
+/* Hide scrollbar visually (optional) */
+.horizontal-scroll-container::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+.horizontal-scroll-container { -ms-overflow-style: none; scrollbar-width: none; } /* IE/Edge/Firefox */
+
+
+.friend-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100px; /* Fixed width for each friend item */
+    flex-shrink: 0; /* Prevent shrinking */
+    position: relative;
+}
+
+.friend-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--placeholder-bg);
+    margin-bottom: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.friend-item span {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; /* Ensure ellipsis works */
+}
+
+.friend-item small {
+    font-size: 11px;
+    color: var(--text-secondary);
+     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%; /* Ensure ellipsis works */
+}
+
+.status-indicator {
+    position: absolute;
+    top: 45px; /* Position relative to avatar */
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-secondary); /* Background cutout */
+}
+
+.status-indicator.online { background-color: var(--accent-online); }
+.status-indicator.playing { background-color: var(--accent-playing); }
+.status-indicator.website { background-color: var(--accent-website); }
+/* Add .offline if needed */
+
+
+/* --- Game Grids & Cards --- */
+.game-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.spotlight-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+}
+
+.small-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.full-page-grid {
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.game-card {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-thumb {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    background-color: var(--placeholder-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--text-tertiary);
+}
+
+.game-card.small .game-thumb {
+     padding-bottom: 100%; /* 1:1 Aspect Ratio for small cards */
+}
+
+.game-info {
+    padding: 15px;
+}
+.game-card.small .game-info {
+    padding: 10px;
+}
+
+.game-info h4 { /* For large/medium cards */
+    font-size: 16px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.game-info h5 { /* For small cards */
+     font-size: 14px;
+     margin-bottom: 5px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+}
+
+.game-info small { /* Creator */
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+.game-card.small .game-info small {
+    margin-bottom: 5px;
+}
+
+
+.game-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.game-stats.small-stats {
+    font-size: 11px;
+    gap: 8px;
+}
+
+.game-stats i {
+    margin-right: 4px;
+}
+
+/* --- Placeholder AD --- */
+.ad-placeholder {
+    position: absolute; /* Or fixed if they should stay on screen */
+    bottom: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--placeholder-bg);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.bottom-left { left: 20px; }
+.bottom-right { right: 20px; }
+
+
+/* === Placeholder Styles for Other Sections === */
+/* --- Avatar Shop --- */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+}
+.item-card {
+     background-color: var(--bg-secondary);
+     border-radius: 8px;
+     overflow: hidden;
+     border: 1px solid var(--border-color);
+     text-align: center;
+}
+.item-thumb {
+     height: 160px; /* Adjust as needed */
+     background-color: var(--placeholder-bg);
+      display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 24px;
+     color: var(--text-tertiary);
+}
+.item-info {
+    padding: 10px;
+}
+.item-info h5 { margin-bottom: 5px; }
+.item-info small { color: var(--text-secondary); display: block; margin-bottom: 8px; }
+.item-info span { font-weight: bold; color: #00a2ff; /* Robux color */}
+.item-info span i { margin-right: 3px; }
+
+/* --- Profile --- */
+.profile-header { display: flex; align-items: center; gap: 20px; margin-bottom: 30px;}
+.profile-avatar-large { width: 120px; height: 120px; border-radius: 50%; background-color: var(--placeholder-bg); border: 2px solid var(--border-color); }
+.profile-stats { margin-top: 10px; color: var(--text-secondary); }
+.profile-tabs button, .friend-tabs button { padding: 10px 15px; border-bottom: 2px solid var(--border-color); margin-right: 5px; }
+.profile-tabs button:hover, .friend-tabs button:hover { border-bottom-color: var(--accent-primary); }
+
+
+/* --- Messages --- */
+.message-list { display: flex; flex-direction: column; gap: 10px; }
+.message-item { display: flex; align-items: center; gap: 15px; background-color: var(--bg-secondary); padding: 15px; border-radius: 6px; border-left: 3px solid transparent; }
+.message-item.unread { border-left-color: var(--accent-primary); background-color: var(--bg-tertiary); }
+.message-item img { width: 40px; height: 40px; border-radius: 50%; background-color: var(--placeholder-bg); }
+.message-item h5 { font-size: 14px; }
+.message-item p { font-size: 13px; color: var(--text-secondary); }
+.message-time { margin-left: auto; font-size: 12px; color: var(--text-tertiary); }
+
+/* --- Friends Page --- */
+.friend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+.friend-detail-item { display: flex; align-items: center; gap: 15px; background-color: var(--bg-secondary); padding: 10px; border-radius: 6px; }
+.friend-detail-item img { width: 50px; height: 50px; border-radius: 50%; background-color: var(--placeholder-bg); }
+.friend-detail-item h5 { font-size: 14px; }
+.friend-detail-item small { font-size: 12px; color: var(--text-secondary); }
+.friend-detail-item button { margin-left: auto; background-color: var(--bg-tertiary); padding: 5px 10px; border-radius: 4px; font-size: 12px; }
+.friend-detail-item button:hover { background-color: var(--border-color); }
+
+/* --- Settings --- */
+.settings-category { background-color: var(--bg-secondary); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+.settings-category h4 { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+.settings-category label { display: inline-block; width: 180px; color: var(--text-secondary); margin-bottom: 10px; }
+.settings-category span { margin-right: 10px; }
+.settings-category button { background-color: var(--bg-tertiary); padding: 5px 10px; border-radius: 4px; font-size: 12px; }
+.settings-category button:hover { background-color: var(--border-color); }
+.settings-category select { background-color: var(--bg-tertiary); border: 1px solid var(--border-color); color: var(--text-primary); padding: 5px; border-radius: 4px; }
